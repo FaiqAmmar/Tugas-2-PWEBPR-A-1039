@@ -1,3 +1,8 @@
+<?php
+require_once 'database.php';
+$arr = Contact::select();
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -67,6 +72,9 @@
           <thead class="text-xs uppercase bg-gray-800 text-gray-300">
             <tr>
               <th scope="col" class="px-6 py-3">
+                No
+              </th>
+              <th scope="col" class="px-6 py-3">
                 Owner
               </th>
               <th scope="col" class="px-6 py-3">
@@ -84,24 +92,33 @@
             </tr>
           </thead>
           <tbody>
+            <?php
+              for ($i = 0; $i < count($arr['id']); $i++) {
+            ?>
               <tr class="bg-[#0c343d] border-b border-gray-800 hover:bg-[#1a6f82]">
-                  <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-white">
-                    Muhammad Faiq Ammar
-                  </th>
-                  <td class="px-6 py-4">
-                    222410101039
-                  </td>
-                  <td class="px-6 py-4">
-                    085444333222
-                  </td>
-                  <td class="px-6 py-4 text-right">
-                    <a href="#" class="font-medium text-[#3d85c6] hover:text-[#6fa8dc] hover:underline">Edit</a>
-                  </td>
-                  <td class="px-6 py-4 text-right">
-                    <a href="#" class="font-medium text-[#3d85c6] hover:text-[#6fa8dc] hover:underline">Delete</a>
-                  </td>
+                <td class="px-6 py-4">
+                  <?= $i+1 ?>
+                </td>
+                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-white">
+                  <?= $arr['owner'][$i] ?>
+                </th>
+                <td class="px-6 py-4">
+                  <?= $arr['no_id'][$i] ?>
+                </td>
+                <td class="px-6 py-4">
+                  <?= $arr['no_hp'][$i] ?>
+                </td>
+                <td class="px-6 py-4 text-right">
+                  <a href="#" class="font-medium text-[#3d85c6] hover:text-[#6fa8dc] hover:underline">Edit</a>
+                </td>
+                <td class="px-6 py-4 text-right">
+                  <a href="#" class="font-medium text-[#3d85c6] hover:text-[#6fa8dc] hover:underline">Delete</a>
+                </td>
               </tr>
-              <tr class="bg-[#0c343d] border-b border-gray-800 hover:bg-[#1a6f82]">
+            <?php
+              }
+            ?>
+              <!-- <tr class="bg-[#0c343d] border-b border-gray-800 hover:bg-[#1a6f82]">
                   <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-white">
                     Akmal Ihab Syauqi
                   </th>
@@ -134,7 +151,7 @@
                   <td class="px-6 py-4 text-right">
                     <a href="#" class="font-medium text-[#3d85c6] hover:text-[#6fa8dc] hover:underline">Delete</a>
                   </td>
-              </tr>
+              </tr> -->
           </tbody>
         </table> 
       </div>  
@@ -143,4 +160,5 @@
 
 </body>
 
+</html>
 </html>
