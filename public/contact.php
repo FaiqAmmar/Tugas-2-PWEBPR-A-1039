@@ -17,13 +17,13 @@ class Contact {
     }
     return $arr;
   }
-  static funtion insert($id, $owner, $no_id, $no_hp) {
+  static function insert($id, $owner, $no_id, $no_hp) {
     global $conn;
     $sql - "INSERT INTO contact_app(id, owner, no_id, no_hp) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ssss', $id, $owner, $no_id $no_hp);
+    $stmt->bind_param('ssss', $id, $owner, $no_id, $no_hp);
     $stmt->execute();
     $result = $stmt->affected_rows > 0 ? true : false;
-    return $result
+    return $result;
   }
 }
