@@ -1,7 +1,7 @@
 <?php
 include_once 'models/M_ContactApp.php';
 
-class ContactController
+class C_ContactApp
 {
     static function createContact()
     {

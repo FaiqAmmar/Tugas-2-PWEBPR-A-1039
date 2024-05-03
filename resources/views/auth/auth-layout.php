@@ -14,4 +14,4 @@ if (isset($url)) {
 }
 ?>
 
-<?php include_once 'resources/views/master-layout/master-auth'; ?>
+<?php include_once 'resources/views/master-layout/master-auth.php'; ?>

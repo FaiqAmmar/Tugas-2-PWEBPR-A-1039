@@ -6,15 +6,13 @@
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
     <div class="flex items-center justify-between">
       <div class="flex items-center justify-start rtl:justify-end">
-        <a href="#" class="flex ms-2 md:me-24">
-          <img src="/assets/logo1.png" class="h-8 me-3" text-[#3d85c6]alt="FLogo" />
-          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">Contact App</span>
-        </a>
+        <img src="assets/logo1.png" class="h-8 me-3" text-[#3d85c6]alt="Logo" />
+        <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">Contact App</span>
       </div>
       <div class="flex items-center">
         <div class="flex items-center ms-3">
           <div>
-            <img class="w-8 h-8 rounded-full" src="/assets/profil.jpg" alt="user photo">
+            <img class="w-8 h-8 rounded-full" src="assets/profil.jpg" alt="user photo">
           </div>
         </div>
       </div>
@@ -43,7 +41,7 @@
         </a>
       </li>
       <li>
-        <a href="login.html" class="flex items-center p-2 rounded-lg text-white hover:bg-[#3d85c6] group">
+        <a href="<?= urlpath('logout') ?>" class="flex items-center p-2 rounded-lg text-white hover:bg-[#3d85c6] group">
           <svg class="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
           </svg>

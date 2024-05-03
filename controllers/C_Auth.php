@@ -1,9 +1,9 @@
 <?php
 include_once 'models/M_User.php';
 include_once 'function/main.php';
-include_once 'app/config/static.php';
+include_once 'config/static.php';
 
-class AuthController {
+class C_Auth {
     static function login() {
         view('auth/auth-layout', ['url' => 'login']);
     }
@@ -34,7 +34,8 @@ class AuthController {
 
         $user = User::register([
             'nama' => $post['nama'], 
-            'email' => $post['email']
+            'email' => $post['email'],
+            'password' => $post['password']
         ]);
 
         if ($user) {

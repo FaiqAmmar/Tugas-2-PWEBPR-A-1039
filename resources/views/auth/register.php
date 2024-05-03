@@ -1,12 +1,12 @@
 <section class="overflow-auto">
   <div class="mx-auto my-6 h-auto max-w-sm p-5 rounded-lg shadow bg-[#073763] border-[#0c343d] border-4 flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-      <img class="mx-auto h-10 w-auto" src="/assets/logo1.png" alt="Checkmate">
+      <img class="mx-auto h-10 w-auto" src="assets/logo1.png" alt="Checkmate">
       <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">Sign Up your account</h2>
     </div>
   
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" action="dashboard.html" method="POST">
+      <form class="space-y-6" action="<?= urlpath('register'); ?>" method="POST">
         <div>
           <label for="nama" class="block text-sm font-medium leading-6 text-white">Nama</label>
           <div class="mt-2">
@@ -37,7 +37,7 @@
       </form>
   
       <p class="mt-10 text-center text-sm text-white">Already a member?
-        <a href="login.html" class="font-semibold leading-6 text-[#3d85c6] hover:text-[#6fa8dc] hover:underline">Login</a>
+        <a href="<?= urlpath('login') ?>" class="font-semibold leading-6 text-[#3d85c6] hover:text-[#6fa8dc] hover:underline">Login</a>
       </p>
     </div>
   </div>
