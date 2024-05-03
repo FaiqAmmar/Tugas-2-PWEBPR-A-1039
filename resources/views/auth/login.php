@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Login</title>
-</head>
-
-<body class="bg-[#6fa8dc]">
+<section class="overflow-auto">
   <div class="mx-auto my-6 h-auto max-w-sm p-5 rounded-lg shadow bg-[#073763] border-[#0c343d] border-4 flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
       <img class="mx-auto h-10 w-auto" src="/assets/logo1.png" alt="Checkmate">
@@ -43,6 +33,4 @@
       </p>
     </div>
   </div>
-</body>
-
-</html>
+</section>

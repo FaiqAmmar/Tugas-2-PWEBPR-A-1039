@@ -1,6 +1,6 @@
 <?php
 require_once 'contact.php';
-$arr = Contact::select();
+// $arr = Contact::select();
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ $arr = Contact::select();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Dashboard</title>
 </head>
@@ -22,7 +23,7 @@ $arr = Contact::select();
         <div class="flex items-center justify-start rtl:justify-end">
           <a href="#" class="flex ms-2 md:me-24">
             <img src="/assets/logo1.png" class="h-8 me-3" text-[#3d85c6]alt="FLogo" />
-            <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">Checkmate</span>
+            <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">Contact App</span>
           </a>
         </div>
         <div class="flex items-center">
@@ -49,7 +50,10 @@ $arr = Contact::select();
           </a>
         </li>
         <li>
-          <a href="login.html" class="flex items-center p-2 rounded-lg text-white hover:bg-[#3d85c6] group">
+          <a href="#" class="flex items-center p-2 rounded-lg text-white hover:bg-[#3d85c6] group">
+          <svg class="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 36 36">
+            <path fill="currentColor" d="M31 15H21V5a3 3 0 1 0-6 0v10H5a3 3 0 1 0 0 6h10v10a3 3 0 1 0 6 0V21h10a3 3 0 1 0 0-6z"/>
+          </svg>
             <span class="flex-1 ms-3 whitespace-nowrap">Tambah Data</span>
           </a>
         </li>
@@ -157,6 +161,8 @@ $arr = Contact::select();
       </div>  
     </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
 </body>
 
