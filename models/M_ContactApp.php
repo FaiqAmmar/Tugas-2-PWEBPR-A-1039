@@ -1,13 +1,13 @@
 <?php
-include_once __DIR__ . '/../config/db_connect.php';
+include_once __DIR__ . '/../config/db_connect.php'; 
 
 class Contact
 {
-    static function getAllContacts($noId)
+    static function getAllContacts($Id)
     {
         global $conn;
-        $stmt = $conn->prepare("SELECT * FROM contact_app WHERE no_id = ?");
-        $stmt->bind_param("s", $noId);
+        $stmt = $conn->prepare("SELECT * FROM contact_app WHERE id = ?");
+        $stmt->bind_param("i", $Id);
         $stmt->execute();
         $result = $stmt->get_result();
         $contacts = array();

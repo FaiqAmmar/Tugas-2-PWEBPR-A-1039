@@ -13,7 +13,7 @@
     </style>
 </head>
 
-<body>
+<body class="bg-[#6fa8dc]">
     <?= $body ?? ''; ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
