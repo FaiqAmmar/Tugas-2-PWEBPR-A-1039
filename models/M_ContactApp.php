@@ -6,7 +6,7 @@ class Contact
     static function getAllContacts($Id)
     {
         global $conn;
-        $stmt = $conn->prepare("SELECT * FROM contact_app WHERE id = ?");
+        $stmt = $conn->prepare("SELECT * FROM contact WHERE no_id = ?");
         $stmt->bind_param("i", $Id);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -24,8 +24,8 @@ class Contact
         $noId = $data['no_id'];
         $noHp = $data['no_hp'];
         global $conn;
-        $stmt = $conn->prepare("INSERT INTO contact_app (contact_name, no_id, no_hp) VALUES (?, ?, ?, NOW())");
-        $stmt->bind_param("sss", $contactName, $noId, $noHp);
+        $stmt = $conn->prepare("INSERT INTO contact (contact_name, no_id, no_hp) VALUES (?, ?, ?)");
+        $stmt->bind_param("sis", $contactName, $noId, $noHp);
         $stmt->execute();
         return $conn->insert_id;
     }
@@ -33,7 +33,7 @@ class Contact
     static function getContactById($id)
     {
         global $conn;
-        $stmt = $conn->prepare("SELECT * FROM contact_app WHERE id = ?");
+        $stmt = $conn->prepare("SELECT * FROM contact WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -47,8 +47,8 @@ class Contact
         $noId = $data['no_id'];
         $noHp = $data['no_hp'];
         $id = $data['id'];
-        $stmt = $conn->prepare("UPDATE contact_app SET contact_name = ?, no_id = ?, no_hp = ? WHERE id = ?");
-        $stmt->bind_param("sssi", $contactName, $noId, $noHp, $id);
+        $stmt = $conn->prepare("UPDATE contact SET contact_name = ?, no_id = ?, no_hp = ? WHERE id = ?");
+        $stmt->bind_param("sisi", $contactName, $noId, $noHp, $id);
         $stmt->execute();
         return $stmt->affected_rows;
     }
@@ -56,7 +56,7 @@ class Contact
     static function deleteContact($id)
     {
         global $conn;
-        $stmt = $conn->prepare("DELETE FROM contact_app WHERE id = ?");
+        $stmt = $conn->prepare("DELETE FROM contact WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         return $stmt->affected_rows;

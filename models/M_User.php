@@ -31,7 +31,7 @@ class User
         $password = $data['password'];
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO user SET nama = ?, email = ?, password = ?";
+        $sql = "INSERT INTO user SET  nama = ?, email = ?, password = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('sss', $nama, $email, $hashedPassword);
         $stmt->execute();

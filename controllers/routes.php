@@ -15,3 +15,6 @@ Router::url('logout', 'get', 'C_Auth::logout');
 
 // Dashboard
 Router::url('dashboard', 'get', 'C_Dashboard::index');
+Router::url('dashboard/tambah-contact', 'post', 'C_ContactApp::createContact');
+Router::url('dashboard/ubah-contact', 'post', 'C_ContactApp::updateContact');
+Router::url('dashboard/hapus-contact', 'post', 'C_ContactApp::deleteContact');

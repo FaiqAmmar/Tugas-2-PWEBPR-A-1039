@@ -9,7 +9,7 @@ class C_Dashboard {
             exit;
         }
         else {
-            view('dashboard', ['contacts' => Contact::getAllContacts($_SESSION['user']['id'])]);
+            view('V_Dashboard', ['contacts' => Contact::getAllContacts($_SESSION['user']['id'])]);
         }
     }
 }

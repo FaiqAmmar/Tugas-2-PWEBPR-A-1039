@@ -13,7 +13,7 @@ class C_ContactApp
             $contact = Contact::createContact([
                 'contact_name' => $post['contact_name'],
                 'no_hp' => $post['no_hp'],
-                'no_id' => $post['no_id'],
+                'no_id' => $_SESSION['user']['id'],
             ]);
 
             if ($contact) {
@@ -34,7 +34,8 @@ class C_ContactApp
             $contact = Contact::updateContact([
                 'contact_name' => $post['contact_name'],
                 'no_hp' => $post['no_hp'],
-                'no_id' => $post['no_id'],
+                'no_id' => $_SESSION['user']['id'],
+                'id' => $post['id'],
             ]);
             if ($contact) {
                 header('Location: ' . BASEURL . 'dashboard');
@@ -51,7 +52,7 @@ class C_ContactApp
             exit;
         } else {
             $post = array_map('htmlspecialchars', $_POST);
-            $contact = Contact::deleteContact($_POST['contactId']);
+            $contact = Contact::deleteContact($_POST['id']);
             if ($contact) {
                 header('Location: ' . BASEURL . 'dashboard');
             } else {

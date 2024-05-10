@@ -5,11 +5,11 @@ include_once 'config/static.php';
 
 class C_Auth {
     static function login() {
-        view('auth/auth-layout', ['url' => 'login']);
+        view('auth/auth-layout', ['url' => 'V_Login']);
     }
 
     static function register() {
-        view('auth/auth-layout', ['url' => 'register']);
+        view('auth/auth-layout', ['url' => 'V_Register']);
     }
 
     static function sessionLogin() {
@@ -39,7 +39,7 @@ class C_Auth {
         ]);
 
         if ($user) {
-            header('Location: '.BASEURL.'login');
+            header('Location: '.BASEURL.'dashboard');
         }
         else {
             header('Location: '.BASEURL.'register?failed=true');
@@ -58,6 +58,6 @@ class C_Auth {
         }
 
         session_destroy();
-        header('Location: '.BASEURL. 'login');
+        header('Location: '.BASEURL. 'dashboard');
     }
 }
